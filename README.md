@@ -17,11 +17,15 @@ This approach prioritizes security, preventing inadvertent exposure of sensitive
 
 ## Installation
 
-Install the package using npm:
-
 ```bash
 npm install npmrc-replace-env
+
+yarn add npmrc-replace-env
+
+pnpm add npmrc-replace-env
 ```
+
+**Note**: While installing the package is an option, it's important to highlight that it is not required for using the utility. The utility can be directly invoked using npx without installing the package.
 
 ## Usage
 
@@ -31,7 +35,7 @@ Run the utility using npx:
 npx npmrc-replace-env
 ```
 
-This will generate a `.npmrc` file based on the configuration provided in a file named `.npmrc.config`.
+This will generate a `.npmrc` file (or override any existing `.npmrc` files) based on the configuration provided in a file named `.npmrc.config`.
 
 ## Configuration
 

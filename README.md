@@ -1,4 +1,4 @@
-# @dennzimm/npmrc-replace-env
+# npmrc-replace-env
 
 **A utility for dynamically generating .npmrc files based on configuration and environment variables.**
 
@@ -20,7 +20,7 @@ This approach prioritizes security, preventing inadvertent exposure of sensitive
 Install the package using npm:
 
 ```bash
-npm install @dennzimm/npmrc-replace-env
+npm install npmrc-replace-env
 ```
 
 ## Usage
@@ -28,7 +28,7 @@ npm install @dennzimm/npmrc-replace-env
 Run the utility using npx:
 
 ```bash
-npx @dennzimm/npmrc-replace-env
+npx npmrc-replace-env
 ```
 
 This will generate a `.npmrc` file based on the configuration provided in a file named `.npmrc.config`.

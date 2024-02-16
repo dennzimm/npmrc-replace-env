@@ -1,0 +1,43 @@
+{
+  "name": "@dennzimm/npmrc-replace-env",
+  "version": "0.0.1",
+  "description": "A utility for generating .npmrc files based on configuration template and environment variables.",
+  "license": "MIT",
+  "main": "dist/index.js",
+  "module": "dist/index.mjs",
+  "types": "dist/index.d.ts",
+  "bin": "dist/cli.js",
+  "scripts": {
+    "build": "tsup src/index.ts src/cli.ts --format cjs,esm --dts",
+    "release": "pnpm run build && changeset publish",
+    "lint": "tsc"
+  },
+  "dependencies": {
+    "dotenv-flow": "^4.1.0"
+  },
+  "devDependencies": {
+    "@changesets/cli": "^2.27.1",
+    "@types/node": "^20.11.19",
+    "tsup": "^8.0.2",
+    "typescript": "^5.3.3"
+  },
+  "files": [
+    "dist/*.js",
+    "dist/*.cjs",
+    "dist/*.mjs",
+    "dist/*.d.ts",
+    "dist/*.d.mts"
+  ],
+  "author": "Dennis Zimmermann <https://github.com/dennzimm>",
+  "homepage": "https://github.com/dennzimm/npmrc-replace-env#readme",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dennzimm/npmrc-replace-env.git"
+  },
+  "bugs": "https://github.com/dennzimm/npmrc-replace-env/issues",
+  "keywords": [
+    "npmrc",
+    "generator",
+    "config"
+  ]
+}

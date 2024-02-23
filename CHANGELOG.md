@@ -1,5 +1,11 @@
 # npmrc-replace-env
 
+## 1.0.1
+
+### Patch Changes
+
+- aebcf87: Update documentation & keywords
+
 ## 1.0.0
 
 ### Major Changes

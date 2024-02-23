@@ -35,9 +35,17 @@
     "url": "git+https://github.com/dennzimm/npmrc-replace-env.git"
   },
   "bugs": "https://github.com/dennzimm/npmrc-replace-env/issues",
-  "keywords": [
+  "c": [
     "npmrc",
+    "npmrc-generator",
+    "config-template",
+    "configuration",
+    "config",
     "generator",
-    "config"
+    "environment-variables",
+    "env",
+    "devops",
+    "utility",
+    "cli"
   ]
 }

@@ -1,5 +1,11 @@
 # npmrc-replace-env
 
+## 1.0.2
+
+### Patch Changes
+
+- Fix typo for keywords in package.json
+
 ## 1.0.1
 
 ### Patch Changes

@@ -1,6 +1,6 @@
 {
   "name": "npmrc-replace-env",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "A utility for generating .npmrc files based on configuration template and environment variables.",
   "license": "MIT",
   "main": "dist/index.js",

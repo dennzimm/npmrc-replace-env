@@ -1,5 +1,12 @@
 # npmrc-replace-env
 
+## 1.0.3
+
+### Patch Changes
+
+- 580d9b2: Bump @types/node from 20.11.19 to 20.11.20
+  Update contribution info for changesets
+
 ## 1.0.2
 
 ### Patch Changes

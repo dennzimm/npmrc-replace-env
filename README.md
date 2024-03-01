@@ -83,6 +83,8 @@ For more detailed configuration options and information about using `.env` files
 
 Contributions are welcome! If you encounter issues or have suggestions, please feel free to open an [issue](https://github.com/dennzimm/npmrc-replace-env/issues) or submit a [pull request](https://github.com/dennzimm/npmrc-replace-env/pulls).
 
+This package uses [Changesets](https://github.com/changesets/changesets/tree/main) for version management. For further information on contributing and working with Changesets, refer to the Changesets Documentation: [Using Changesets](https://github.com/changesets/changesets/blob/main/docs/intro-to-using-changesets.md).
+
 ## License
 
 This project is licensed under the MIT License - see the [LICENSE](./LICENSE) file for details.

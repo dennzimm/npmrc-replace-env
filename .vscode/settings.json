@@ -1,6 +1,7 @@
 {
     "conventionalCommits.scopes": [
         "readme",
-        "changeset"
+        "changeset",
+        "deps"
     ]
 }

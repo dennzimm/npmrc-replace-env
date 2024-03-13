@@ -13,11 +13,13 @@
     "lint": "tsc"
   },
   "dependencies": {
-    "dotenv-flow": "^4.1.0"
+    "dotenv-flow": "^4.1.0",
+    "yargs": "^17.7.2"
   },
   "devDependencies": {
     "@changesets/cli": "^2.27.1",
     "@types/node": "^20.11.19",
+    "@types/yargs": "^17.0.32",
     "tsup": "^8.0.2",
     "typescript": "^5.3.3"
   },

@@ -91,6 +91,9 @@ The utility supports the following command-line options for customization:
 
 These options provide flexibility in configuring environment variables and allow tailoring the utility to your specific needs.
 
+[!NOTE]
+To display the help message for command-line options, use the `--help` or `-h` option when invoking the utility:
+
 ## Contributing
 
 Contributions are welcome! If you encounter issues or have suggestions, please feel free to open an [issue](https://github.com/dennzimm/npmrc-replace-env/issues) or submit a [pull request](https://github.com/dennzimm/npmrc-replace-env/pulls).

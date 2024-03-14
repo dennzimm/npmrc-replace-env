@@ -3,7 +3,7 @@
  */
 const DEFAULT_ENV_MOCK = [
   ["SOME_TOKEN", "some-token"],
-  ["SOME_other_Token_1", "some-other-token"],
+  ["SOME_OTHER_TOKEN_1", "some-other-token"],
   ["FA_AUTH_TOKEN", "fa-token"],
 ] as const;
 

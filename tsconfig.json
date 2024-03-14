@@ -12,11 +12,8 @@
     "noFallthroughCasesInSwitch": true,
     "forceConsistentCasingInFileNames": true,
     "moduleResolution": "Bundler",
-    "module": "ESNext",
+    "module": "preserve",
     "noEmit": true,
-    "lib": ["es2022"],
-    "jsx": "react-jsx",
-    "allowImportingTsExtensions": true,
-    "verbatimModuleSyntax": true,
+    "lib": ["es2022"]
   }
 }

@@ -1,5 +1,13 @@
 # npmrc-replace-env
 
+## 1.1.1
+
+### Patch Changes
+
+- 7c765d7: Add "Command Line Options" to TOC in README
+- d9338fe: chore(deps-dev): bump @types/node from 20.11.27 to 20.11.28
+- 4a66b5b: chore(deps-dev): bump typescript from 5.4.2 to 5.4.3
+
 ## 1.1.0
 
 ### Minor Changes

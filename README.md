@@ -12,6 +12,7 @@ This approach prioritizes security, preventing inadvertent exposure of sensitive
 - [Usage](#usage)
 - [Configuration](#configuration)
   - [Define Environment Variables in .env](#define-environment-variables-in-env)
+- [Command Line Options](#command-line-options)
 - [Contributing](#contributing)
 - [License](#license)
 
@@ -25,8 +26,7 @@ yarn add npmrc-replace-env
 pnpm add npmrc-replace-env
 ```
 
-[!NOTE]
-While installing the package is an option, it's important to note that it's not required to use the utility. The utility can be invoked directly with npx without installing the package.
+**Note**: While installing the package is an option, it's important to note that it's not required to use the utility. The utility can be invoked directly with npx without installing the package.
 
 ## Usage
 
@@ -78,21 +78,22 @@ NPMRC_MYTOKEN2=your_another_token_value
 NPMRC_FA_AUTH_TOKEN=your_fontawesome_token_value
 ```
 
+**Note**: By default, the utility expects environment variables to begin with the prefix `NPMRC_`, as shown in the example above. This default behavior can be customized using command-line options. For more information on customizing the prefix for environment variables, refer to the [Command Line Options](#command-line-options) section below.
+
 For more detailed configuration options and information about using `.env` files, refer to the [dotenv-flow documentation](https://www.npmjs.com/package/dotenv-flow).
 
 ## Command Line Options
 
 The utility supports the following command-line options for customization:
 
-| Option          | Alias | Description                                    | Default              |
-|-----------------|-------|------------------------------------------------|----------------------|
-| `--prefix`      | `-p`  | Custom environment variable prefix             | `NPMRC_`|
-| `--without-prefix`| `-w`| Do not use any prefix for environment variables| `false`              |
+| Option             | Alias | Description                                     | Default  |
+| ------------------ | ----- | ----------------------------------------------- | -------- |
+| `--prefix`         | `-p`  | Custom environment variable prefix              | `NPMRC_` |
+| `--without-prefix` | `-w`  | Do not use any prefix for environment variables | `false`  |
 
 These options provide flexibility in configuring environment variables and allow tailoring the utility to your specific needs.
 
-[!NOTE]
-To display the help message for command-line options, use the `--help` or `-h` option when invoking the utility:
+**Note**: To display the help message for command-line options, use the `--help` or `-h` option when invoking the utility:
 
 ## Contributing
 

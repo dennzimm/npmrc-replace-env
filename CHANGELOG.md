@@ -1,5 +1,11 @@
 # npmrc-replace-env
 
+## 1.1.2
+
+### Patch Changes
+
+- 4e56835: Suppresses all kinds of warnings including ".env\*" files' loading errors from dotenv-flow
+
 ## 1.1.1
 
 ### Patch Changes

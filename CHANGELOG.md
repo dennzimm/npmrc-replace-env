@@ -1,5 +1,12 @@
 # npmrc-replace-env
 
+## 1.1.3
+
+### Patch Changes
+
+- 35153ff: chore(deps-dev): bump typescript from 5.4.3 to 5.4.5
+- f6f13af: chore(deps-dev): bump @types/node from 20.11.28 to 20.12.7
+
 ## 1.1.2
 
 ### Patch Changes

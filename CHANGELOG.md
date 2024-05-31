@@ -1,5 +1,14 @@
 # npmrc-replace-env
 
+## 1.1.4
+
+### Patch Changes
+
+- 042c084: chore(deps): bump pnpm/action-setup from 3 to 4
+- 5a7c108: chore(deps-dev): bump @types/node from 20.12.7 to 20.12.12
+- add35ed: chore(deps-dev): bump @changesets/cli from 2.27.1 to 2.27.3
+- f287f3a: chore(deps-dev): bump ts-jest from 29.1.2 to 29.1.3
+
 ## 1.1.3
 
 ### Patch Changes

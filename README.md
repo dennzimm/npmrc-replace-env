@@ -6,6 +6,8 @@ Managing npm registry configurations and authentication tokens across different 
 
 This approach prioritizes security, preventing inadvertent exposure of sensitive information, like auth tokens in your `.npmrc` file, in version control systems.
 
+Check out my article for a quick overview and insights about this utility [here](https://dev.to/dennzimm/how-to-replace-environment-variables-in-a-npmrc-file-jpg)!
+
 ## Table of Contents
 
 - [Installation](#installation)

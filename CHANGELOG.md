@@ -1,5 +1,11 @@
 # npmrc-replace-env
 
+## 1.1.5
+
+### Patch Changes
+
+- 2304a66: chore(deps-dev): bump @changesets/cli from 2.27.3 to 2.27.6
+
 ## 1.1.4
 
 ### Patch Changes

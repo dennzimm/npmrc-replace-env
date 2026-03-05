@@ -75,3 +75,39 @@ export function getConfigWithPlaceholdersMock(envPrefix: string): string {
 export function getConfigWithValuesMock(): string {
   return getConfigMock(getEnvValuesMock());
 }
+
+/**
+ * Returns a mock configuration string using ${VAR} shell-style placeholders.
+ *
+ * @returns The mock configuration string with shell curly placeholders.
+ */
+export function getConfigWithShellCurlyPlaceholdersMock(): string {
+  return getConfigMock(getShellCurlyPlaceholdersMock());
+}
+
+/**
+ * Returns an array of shell curly-style placeholders (e.g. ${TOKEN}).
+ *
+ * @returns An array of shell curly placeholders.
+ */
+export function getShellCurlyPlaceholdersMock(): string[] {
+  return DEFAULT_ENV_MOCK.map(([key]) => `\${${key}}`);
+}
+
+/**
+ * Returns a mock configuration string using $VAR shell-style placeholders.
+ *
+ * @returns The mock configuration string with shell dollar placeholders.
+ */
+export function getConfigWithShellDollarPlaceholdersMock(): string {
+  return getConfigMock(getShellDollarPlaceholdersMock());
+}
+
+/**
+ * Returns an array of shell dollar-style placeholders (e.g. $TOKEN).
+ *
+ * @returns An array of shell dollar placeholders.
+ */
+export function getShellDollarPlaceholdersMock(): string[] {
+  return DEFAULT_ENV_MOCK.map(([key]) => `$${key}`);
+}

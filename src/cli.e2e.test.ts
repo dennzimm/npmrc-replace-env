@@ -6,6 +6,7 @@ import path from "node:path";
 import { afterEach, beforeAll, describe, expect, it } from "vitest";
 import {
   getConfigWithPlaceholdersMock,
+  getConfigWithShellCurlyPlaceholdersMock,
   getConfigWithValuesMock,
   getEnvMock,
 } from "./utils/test/test-mock.util";
@@ -62,6 +63,21 @@ describe("CLI E2E", () => {
   it("replaces placeholders without prefix (--without-prefix)", async () => {
     const env = setup("");
     const result = runCli(["--without-prefix"], env);
+
+    expect(result.status).toBe(0);
+    const output = await readFile(path.join(tmpDir, ".npmrc"), "utf-8");
+    expect(output).toContain(getConfigWithValuesMock());
+  });
+
+  it("replaces shell curly-style placeholders", async () => {
+    tmpDir = mkdtempSync(path.join(tmpdir(), "npmrc-e2e-"));
+    writeFileSync(
+      path.join(tmpDir, ".npmrc.config"),
+      getConfigWithShellCurlyPlaceholdersMock(),
+    );
+    // Shell-style uses unprefixed env var names
+    const env = Object.fromEntries(getEnvMock(""));
+    const result = runCli([], env);
 
     expect(result.status).toBe(0);
     const output = await readFile(path.join(tmpDir, ".npmrc"), "utf-8");

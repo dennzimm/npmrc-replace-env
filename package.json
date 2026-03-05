@@ -12,6 +12,7 @@
     "release": "pnpm run build && changeset publish",
     "test": "vitest run",
     "test:coverage": "vitest run --coverage",
+    "demo": "pnpm build && bash scripts/demo.sh",
     "lint": "biome check .",
     "format": "biome format --write ."
   },

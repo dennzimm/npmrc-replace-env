@@ -1,0 +1,14 @@
+# npmrc-replace-env
+
+> A utility for generating `.npmrc` files from a `.npmrc.config` template by replacing environment variable placeholders via dotenv-flow.
+
+## Documentation
+
+- [README](./README.md): Installation, usage, configuration, and CLI options
+
+## Source
+
+- [src/cli.ts](./src/cli.ts): CLI entry point (yargs-based, `--prefix` / `--without-prefix` options)
+- [src/index.ts](./src/index.ts): Public API (`writeNpmrc`)
+- [src/utils/](./src/utils/): Core utilities (read config, generate npmrc, resolve env values)
+- [src/constants/defaults.const.ts](./src/constants/defaults.const.ts): Default file names and env prefix (`NPMRC_`)

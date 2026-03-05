@@ -1,5 +1,13 @@
 # npmrc-replace-env
 
+## 1.1.5
+
+### Patch Changes
+
+- b3db5eb: chore(deps): migrate to Vitest v4, bump yargs v18, Node 24 LTS
+- 1a972ef: chore(deps-dev): upgrade @biomejs/biome to v2
+- 2304a66: chore(deps-dev): bump @changesets/cli from 2.27.3 to 2.27.6
+
 ## 1.1.4
 
 ### Patch Changes

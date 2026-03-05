@@ -52,4 +52,17 @@ describe("writeNpmrc", () => {
       `Error writing to ${DEFAULT_NPMRC_FILE} file: disk full`,
     );
   });
+
+  it("should use the raw error as fallback when message is unavailable", () => {
+    vi.mocked(readConfig).mockReturnValue("config");
+    vi.mocked(getEnvKeysFromConfig).mockReturnValue([]);
+    vi.mocked(generateNpmrc).mockReturnValue("content");
+    mockWriteFileSync.mockImplementation(() => {
+      throw "bare string error";
+    });
+
+    expect(() => writeNpmrc({ envPrefix: "NPMRC_" })).toThrow(
+      `Error writing to ${DEFAULT_NPMRC_FILE} file: bare string error`,
+    );
+  });
 });

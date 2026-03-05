@@ -103,6 +103,10 @@ Contributions are welcome! If you encounter issues or have suggestions, please f
 
 This package uses [Changesets](https://github.com/changesets/changesets/tree/main) for version management. For further information on contributing and working with Changesets, refer to the Changesets Documentation: [Using Changesets](https://github.com/changesets/changesets/blob/main/docs/intro-to-using-changesets.md).
 
+## AI Discoverability
+
+An [`llms.txt`](./llms.txt) file is available at the root of this repository for AI tools that support the [llms.txt spec](https://llmstxt.org/).
+
 ## License
 
 This project is licensed under the MIT License - see the [LICENSE](./LICENSE) file for details.

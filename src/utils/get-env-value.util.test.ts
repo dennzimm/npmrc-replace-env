@@ -1,8 +1,9 @@
+import { beforeEach, describe, expect, it, vi } from "vitest";
 import { getEnvValue } from "./get-env-value.util";
 
 describe("getEnvValue", () => {
   beforeEach(() => {
-    jest.resetModules();
+    vi.resetModules();
   });
 
   it("should return the value of an existing environment variable", () => {

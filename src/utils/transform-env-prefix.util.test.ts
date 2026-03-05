@@ -1,3 +1,4 @@
+import { describe, expect, it } from "vitest";
 import { DEFAULT_ENV_PREFIX } from "../constants/defaults.const";
 import { transformEnvPrefix } from "./transform-env-prefix.util";
 

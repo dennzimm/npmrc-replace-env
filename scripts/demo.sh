@@ -82,6 +82,13 @@ scenario \
   "" \
   "MY_TOKEN=my-secret-token"
 
+scenario \
+  "Placeholder inside URL path" \
+  "@myorg:registry=https://somewhere-else.com/NPMRC_MY_ORG
+//somewhere-else.com/NPMRC_MY_ORG/:always-auth=true" \
+  "" \
+  "NPMRC_MY_ORG=my-org"
+
 echo ""
 echo -e "${DIM}Cleaning up...${RESET}"
 rm -f "$TEST_DIR/.npmrc.config" "$TEST_DIR/.npmrc"

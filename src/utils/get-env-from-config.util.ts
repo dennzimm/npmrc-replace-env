@@ -7,9 +7,9 @@
  */
 export function getEnvKeysFromConfig(config: string, envPrefix = ""): string[] {
   const prefixMatches =
-    config.match(new RegExp(`(?<=\\=)${envPrefix}[A-Z0-9_]+`, "g")) || [];
-  const curlyMatches = config.match(/(?<==)\$\{[A-Z0-9_]+\}/g) || [];
-  const dollarMatches = config.match(/(?<==)\$[A-Z0-9_]+/g) || [];
+    config.match(new RegExp(`(?<=[=/])${envPrefix}[A-Z0-9_]+`, "g")) || [];
+  const curlyMatches = config.match(/\$\{[A-Z0-9_]+\}/g) || [];
+  const dollarMatches = config.match(/\$[A-Z0-9_]+/g) || [];
 
   return Array.from(
     new Set([...prefixMatches, ...curlyMatches, ...dollarMatches]),

@@ -111,3 +111,42 @@ export function getConfigWithShellDollarPlaceholdersMock(): string {
 export function getShellDollarPlaceholdersMock(): string[] {
   return DEFAULT_ENV_MOCK.map(([key]) => `$${key}`);
 }
+
+const URL_ORG_ENV_MOCK = ["MY_ORG", "my-org"] as const;
+
+/**
+ * Returns a mock configuration string with a placeholder embedded inside URL paths.
+ *
+ * @param envPrefix - The prefix for environment placeholders.
+ * @returns The mock configuration string with URL-path placeholders.
+ */
+export function getConfigWithUrlPlaceholdersMock(envPrefix: string): string {
+  const key = `${envPrefix}${URL_ORG_ENV_MOCK[0]}`;
+  return [
+    `@myorg:registry=https://somewhere-else.com/${key}`,
+    `//somewhere-else.com/${key}/:always-auth=true`,
+  ].join("\n");
+}
+
+/**
+ * Returns a mock configuration string with values embedded inside URL paths.
+ *
+ * @returns The mock configuration string with URL-path values.
+ */
+export function getConfigWithUrlValuesMock(): string {
+  const value = URL_ORG_ENV_MOCK[1];
+  return [
+    `@myorg:registry=https://somewhere-else.com/${value}`,
+    `//somewhere-else.com/${value}/:always-auth=true`,
+  ].join("\n");
+}
+
+/**
+ * Returns the env mock entry for URL org placeholder tests.
+ *
+ * @param envPrefix - The prefix for the environment variable key.
+ * @returns A single-entry array compatible with Object.fromEntries.
+ */
+export function getUrlOrgEnvMock(envPrefix: string) {
+  return [[`${envPrefix}${URL_ORG_ENV_MOCK[0]}`, URL_ORG_ENV_MOCK[1]]] as const;
+}

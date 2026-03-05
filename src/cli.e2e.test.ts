@@ -7,8 +7,11 @@ import { afterEach, beforeAll, describe, expect, it } from "vitest";
 import {
   getConfigWithPlaceholdersMock,
   getConfigWithShellCurlyPlaceholdersMock,
+  getConfigWithUrlPlaceholdersMock,
+  getConfigWithUrlValuesMock,
   getConfigWithValuesMock,
   getEnvMock,
+  getUrlOrgEnvMock,
 } from "./utils/test/test-mock.util";
 
 const ROOT = path.resolve(__dirname, "..");
@@ -82,6 +85,49 @@ describe("CLI E2E", () => {
     expect(result.status).toBe(0);
     const output = await readFile(path.join(tmpDir, ".npmrc"), "utf-8");
     expect(output).toContain(getConfigWithValuesMock());
+  });
+
+  it("replaces placeholders inside URL paths", async () => {
+    tmpDir = mkdtempSync(path.join(tmpdir(), "npmrc-e2e-"));
+    writeFileSync(
+      path.join(tmpDir, ".npmrc.config"),
+      getConfigWithUrlPlaceholdersMock("NPMRC_"),
+    );
+    const env = Object.fromEntries(getUrlOrgEnvMock("NPMRC_"));
+    const result = runCli([], env);
+
+    expect(result.status).toBe(0);
+    const output = await readFile(path.join(tmpDir, ".npmrc"), "utf-8");
+    expect(output).toContain(getConfigWithUrlValuesMock());
+  });
+
+  it("replaces placeholders inside URL paths with custom prefix (--prefix)", async () => {
+    const prefix = "CUSTOM_";
+    tmpDir = mkdtempSync(path.join(tmpdir(), "npmrc-e2e-"));
+    writeFileSync(
+      path.join(tmpDir, ".npmrc.config"),
+      getConfigWithUrlPlaceholdersMock(prefix),
+    );
+    const env = Object.fromEntries(getUrlOrgEnvMock(prefix));
+    const result = runCli(["--prefix", prefix], env);
+
+    expect(result.status).toBe(0);
+    const output = await readFile(path.join(tmpDir, ".npmrc"), "utf-8");
+    expect(output).toContain(getConfigWithUrlValuesMock());
+  });
+
+  it("replaces placeholders inside URL paths without prefix (--without-prefix)", async () => {
+    tmpDir = mkdtempSync(path.join(tmpdir(), "npmrc-e2e-"));
+    writeFileSync(
+      path.join(tmpDir, ".npmrc.config"),
+      getConfigWithUrlPlaceholdersMock(""),
+    );
+    const env = Object.fromEntries(getUrlOrgEnvMock(""));
+    const result = runCli(["--without-prefix"], env);
+
+    expect(result.status).toBe(0);
+    const output = await readFile(path.join(tmpDir, ".npmrc"), "utf-8");
+    expect(output).toContain(getConfigWithUrlValuesMock());
   });
 
   it("exits with non-zero code when config file is missing", () => {

@@ -5,6 +5,7 @@ import {
   getConfigWithPlaceholdersMock,
   getConfigWithShellCurlyPlaceholdersMock,
   getConfigWithShellDollarPlaceholdersMock,
+  getConfigWithUrlPlaceholdersMock,
   getEnvPlaceholdersMock,
   getShellCurlyPlaceholdersMock,
   getShellDollarPlaceholdersMock,
@@ -65,5 +66,12 @@ describe("getEnvKeysFromConfig", () => {
     const result = getEnvKeysFromConfig(getConfig(), DEFAULT_ENV_PREFIX);
 
     expect(result).toEqual(getExpected());
+  });
+
+  it("should return placeholders from config when they appear inside URL paths", () => {
+    const envPrefix = DEFAULT_ENV_PREFIX;
+    const config = getConfigWithUrlPlaceholdersMock(envPrefix);
+    const result = getEnvKeysFromConfig(config, envPrefix);
+    expect(result).toContain(`${envPrefix}MY_ORG`);
   });
 });

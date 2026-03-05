@@ -10,7 +10,7 @@ import { DEFAULT_ENV_PREFIX } from "../constants/defaults.const";
  * @returns The transformed environment prefix.
  */
 export function transformEnvPrefix(
-  envPrefix: string | null | undefined
+  envPrefix: string | null | undefined,
 ): string {
   return envPrefix === null ? "" : envPrefix || DEFAULT_ENV_PREFIX;
 }

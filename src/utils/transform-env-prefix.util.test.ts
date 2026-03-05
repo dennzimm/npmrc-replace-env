@@ -1,5 +1,5 @@
-import { transformEnvPrefix } from "./transform-env-prefix.util";
 import { DEFAULT_ENV_PREFIX } from "../constants/defaults.const";
+import { transformEnvPrefix } from "./transform-env-prefix.util";
 
 describe("transformEnvPrefix", () => {
   it("should return an empty string if envPrefix is null", () => {

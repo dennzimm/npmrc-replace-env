@@ -11,7 +11,7 @@ export function getEnvValue(env: string): string {
 
   if (typeof value !== "string" || !value) {
     throw new Error(
-      `Environment variable ${env} is not defined. Please define it in your .env file or pass it as an environment variable.`
+      `Environment variable ${env} is not defined. Please define it in your .env file or pass it as an environment variable.`,
     );
   }
 

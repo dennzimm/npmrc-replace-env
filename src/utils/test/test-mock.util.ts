@@ -9,12 +9,14 @@ const DEFAULT_ENV_MOCK = [
 
 /**
  * Returns an array of environment variable mocks with the specified prefix.
- * 
+ *
  * @param envPrefix - The prefix to be added to each environment variable key.
  * @returns An array of environment variable mocks.
  */
 export function getEnvMock(envPrefix: string) {
-  return DEFAULT_ENV_MOCK.map(([key, value]) => [`${envPrefix}${key}`, value] as const);
+  return DEFAULT_ENV_MOCK.map(
+    ([key, value]) => [`${envPrefix}${key}`, value] as const,
+  );
 }
 
 /**
@@ -24,7 +26,7 @@ export function getEnvMock(envPrefix: string) {
  * @returns An array of environment placeholders.
  */
 export function getEnvPlaceholdersMock(
-  envPrefix: string
+  envPrefix: string,
 ): `${typeof envPrefix}${(typeof DEFAULT_ENV_MOCK)[number][0]}`[] {
   return getEnvMock(envPrefix).map(([key]) => key);
 }

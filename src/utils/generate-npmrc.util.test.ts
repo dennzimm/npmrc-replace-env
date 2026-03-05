@@ -13,7 +13,7 @@ const ENV_MOCK = getEnvMock(ENV_PREFIX);
 
 jest.mock("./get-env-value.util", () => ({
   getEnvValue: jest.fn(
-    (env: string) => ENV_MOCK.find(([key]) => key === env)?.[1] ?? ""
+    (env: string) => ENV_MOCK.find(([key]) => key === env)?.[1] ?? "",
   ),
 }));
 

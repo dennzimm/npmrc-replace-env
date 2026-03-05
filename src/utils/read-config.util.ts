@@ -1,4 +1,4 @@
-import * as file from "fs";
+import * as file from "node:fs";
 
 /**
  * Reads the contents of a configuration file.
@@ -10,9 +10,9 @@ import * as file from "fs";
 export function readConfig(configFilePath: string): string {
   try {
     return file.readFileSync(configFilePath).toString();
-  } catch (err) {
+  } catch (_err) {
     throw new Error(
-      `Config file not found: ${configFilePath}. Please create a file named ${configFilePath}`
+      `Config file not found: ${configFilePath}. Please create a file named ${configFilePath}`,
     );
   }
 }

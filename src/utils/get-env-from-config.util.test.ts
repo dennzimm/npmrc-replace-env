@@ -25,13 +25,13 @@ describe("getEnvKeysFromConfig", () => {
   });
 
   it("should return an array of environment keys from the config with no env prefix", () => {
-    const envPrefix = '';
+    const envPrefix = "";
     const config = getConfigWithPlaceholdersMock(envPrefix);
     const expected = getEnvPlaceholdersMock(envPrefix);
     const result = getEnvKeysFromConfig(config, envPrefix);
 
     expect(result).toEqual(expected);
-  })
+  });
 
   it("should return an empty array if no environment keys are found in the config", () => {
     const config = getConfigWithPlaceholdersMock("PREFIX_");

@@ -1,4 +1,4 @@
-import * as file from "fs";
+import * as file from "node:fs";
 import {
   DEFAULT_CONFIG_FILE,
   DEFAULT_NPMRC_FILE,
@@ -37,7 +37,7 @@ export function writeNpmrc({ envPrefix }: WriteNpmrcOptions): void {
     throw new Error(
       `Error writing to ${DEFAULT_NPMRC_FILE} file: ${
         (error as Error).message ?? error
-      }`
+      }`,
     );
   }
 }

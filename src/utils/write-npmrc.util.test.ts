@@ -36,7 +36,7 @@ describe("writeNpmrc", () => {
 
     expect(mockWriteFileSync).toHaveBeenCalledWith(
       DEFAULT_NPMRC_FILE,
-      expect.stringContaining(mockNpmrc)
+      expect.stringContaining(mockNpmrc),
     );
   });
 
@@ -49,7 +49,7 @@ describe("writeNpmrc", () => {
     });
 
     expect(() => writeNpmrc({ envPrefix: "NPMRC_" })).toThrow(
-      `Error writing to ${DEFAULT_NPMRC_FILE} file: disk full`
+      `Error writing to ${DEFAULT_NPMRC_FILE} file: disk full`,
     );
   });
 });

@@ -1,8 +1,4 @@
 {
-    "conventionalCommits.scopes": [
-        "readme",
-        "changeset",
-        "deps"
-    ],
-    "typescript.tsdk": "node_modules/typescript/lib"
+  "conventionalCommits.scopes": ["readme", "changeset", "deps"],
+  "typescript.tsdk": "node_modules/typescript/lib"
 }

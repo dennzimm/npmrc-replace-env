@@ -1,5 +1,8 @@
-import fs from "fs";
-import { DEFAULT_CONFIG_FILE, DEFAULT_ENV_PREFIX } from "../constants/defaults.const";
+import fs from "node:fs";
+import {
+  DEFAULT_CONFIG_FILE,
+  DEFAULT_ENV_PREFIX,
+} from "../constants/defaults.const";
 import { readConfig } from "./read-config.util";
 import { getConfigWithPlaceholdersMock } from "./test/test-mock.util";
 

@@ -11,13 +11,15 @@
     "build": "tsup src/index.ts src/cli.ts --format cjs,esm --dts",
     "release": "pnpm run build && changeset publish",
     "test": "jest",
-    "lint": "tsc"
+    "lint": "biome check .",
+    "format": "biome format --write ."
   },
   "dependencies": {
     "dotenv-flow": "^4.1.0",
     "yargs": "^17.7.2"
   },
   "devDependencies": {
+    "@biomejs/biome": "^2.0.0",
     "@changesets/cli": "^2.27.1",
     "@types/jest": "^29.5.12",
     "@types/node": "^20.11.27",

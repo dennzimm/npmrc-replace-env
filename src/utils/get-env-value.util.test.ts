@@ -15,7 +15,7 @@ describe("getEnvValue", () => {
     expect(() => {
       getEnvValue("UNDEFINED_VARIABLE");
     }).toThrow(
-      `Environment variable UNDEFINED_VARIABLE is not defined. Please define it in your .env file or pass it as an environment variable.`
+      `Environment variable UNDEFINED_VARIABLE is not defined. Please define it in your .env file or pass it as an environment variable.`,
     );
   });
 
@@ -24,7 +24,7 @@ describe("getEnvValue", () => {
     expect(() => {
       getEnvValue("EMPTY_VARIABLE");
     }).toThrow(
-      "Environment variable EMPTY_VARIABLE is not defined. Please define it in your .env file or pass it as an environment variable."
+      "Environment variable EMPTY_VARIABLE is not defined. Please define it in your .env file or pass it as an environment variable.",
     );
   });
 });

@@ -4,4 +4,4 @@ dotenvFlow.config({
   silent: true,
 });
 
-export { writeNpmrc, type WriteNpmrcOptions } from "./utils/write-npmrc.util";
+export { type WriteNpmrcOptions, writeNpmrc } from "./utils/write-npmrc.util";

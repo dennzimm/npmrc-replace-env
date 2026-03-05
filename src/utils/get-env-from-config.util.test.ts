@@ -3,8 +3,25 @@ import { DEFAULT_ENV_PREFIX } from "../constants/defaults.const";
 import { getEnvKeysFromConfig } from "./get-env-from-config.util";
 import {
   getConfigWithPlaceholdersMock,
+  getConfigWithShellCurlyPlaceholdersMock,
+  getConfigWithShellDollarPlaceholdersMock,
   getEnvPlaceholdersMock,
+  getShellCurlyPlaceholdersMock,
+  getShellDollarPlaceholdersMock,
 } from "./test/test-mock.util";
+
+const SHELL_STYLE_CASES = [
+  [
+    "shell curly-style",
+    getConfigWithShellCurlyPlaceholdersMock,
+    getShellCurlyPlaceholdersMock,
+  ],
+  [
+    "shell dollar-style",
+    getConfigWithShellDollarPlaceholdersMock,
+    getShellDollarPlaceholdersMock,
+  ],
+] as const;
 
 describe("getEnvKeysFromConfig", () => {
   it("should return an array of environment keys from the config with default env prefix", () => {
@@ -40,5 +57,13 @@ describe("getEnvKeysFromConfig", () => {
     const result = getEnvKeysFromConfig(config, DEFAULT_ENV_PREFIX);
 
     expect(result).toEqual(expected);
+  });
+
+  it.each(
+    SHELL_STYLE_CASES,
+  )("should return %s placeholders from config", (_, getConfig, getExpected) => {
+    const result = getEnvKeysFromConfig(getConfig(), DEFAULT_ENV_PREFIX);
+
+    expect(result).toEqual(getExpected());
   });
 });

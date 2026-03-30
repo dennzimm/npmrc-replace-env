@@ -27,7 +27,7 @@
     "@types/yargs": "^17.0.32",
     "@vitest/coverage-v8": "^4.0.0",
     "tsup": "^8.0.2",
-    "typescript": "^5.7.0",
+    "typescript": "^6.0.2",
     "vitest": "^4.0.0"
   },
   "files": [
